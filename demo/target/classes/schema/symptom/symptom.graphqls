@@ -1,0 +1,13 @@
+extend type Query {
+    # Possible Conditions based on the provided Symptoms (by name)
+    possibleConditions(symptoms: [String!]!): [Condition!]!
+}
+
+"""
+a physical or mental feature which is regarded as indicating a condition of disease,
+particularly such a feature that is apparent to the patient
+"""
+type Symptom {
+    # The name of a Symptom
+    name: String!
+}

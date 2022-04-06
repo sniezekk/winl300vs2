@@ -1,0 +1,37 @@
+extend type Query {
+    # Find a Drug by its generic name
+    drug(name: String!): Drug!
+}
+
+"""
+A Drug is any chemical substance that causes a change in an organism's physiology or psychology when consumed.
+It is used to treat specific Conditions or Symptoms
+"""
+type Drug {
+    # The generic name of a Drug
+    genericName: String!
+
+    # The various names certain companies market this Drug under
+    brandNames: [String!]!
+
+    # The ids of the Documents that this Drug appears in
+    docIds: [Long!]!
+
+    # Warnings that are relevant about the Drug
+    precautions: [String!]!
+
+    # The dosing options for this Drug
+    dosage: [String!]!
+
+    # The ways this Drug can be administered
+    applicationRoutes: [String!]!
+
+    # What conditions the Drug treats
+    treats: [Condition!]!
+
+    # What taking this Drug may cause
+    sideEffects: [Symptom!]!
+
+    # What things you may not want to take this Drug with
+    contraindications: [Condition!]!
+}

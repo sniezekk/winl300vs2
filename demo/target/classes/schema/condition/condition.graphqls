@@ -1,0 +1,19 @@
+extend type Query {
+    # Find a Condition by its name
+    condition(name: String!): Condition!
+}
+
+# A medical condition is a broad term that includes all diseases, lesions, and disorders
+type Condition {
+    # The name of the Condition
+    name: String!
+
+    # The Symptoms this Condition causes
+    symptoms: [Symptom!]!
+
+    # The Drugs used to treat this Condition
+    treatedBy: [Drug!]!
+
+    # The Drugs that are contraindicated for use in this Condition
+    contraindicated: [Drug!]!
+}

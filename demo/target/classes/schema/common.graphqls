@@ -1,0 +1,5 @@
+type Query
+
+directive @skipcodegen on FIELD_DEFINITION | OBJECT
+
+scalar Long
